@@ -14,3 +14,19 @@ buttons.forEach((btn) => {
         }
     })
 })
+
+var user = document.getElementById('user')
+var password = document.getElementById('password')
+var error = document.getElementById('error')
+
+
+function enviarUser(){
+    console.log('enviando formulario')
+
+    var mensajesError = []
+
+    if(user.value === null || user.value ===''){
+        mensajesError.push('ingresa tu nombre')
+    }
+
+}

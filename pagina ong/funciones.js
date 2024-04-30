@@ -1,32 +1,16 @@
-const display= document.querySelector("#display");
-const buttons= document.querySelectorAll("button");
 
-buttons.forEach((btn) => {
-    btn.addEventListener("click", () =>{
-        if(btn.id === "="){
-            display.value = eval(display.value);
-        } else if (btn.id === "ac"){
-            display.value = "";
-        } else if (btn.id == "de"){
-            display.value = display.value.slice(0, -1);
-        } else {
-            display.value += btn.id
+
+var inputs = document.getElementsByClassName('Formulario_input');
+for (var i = 0; i <inputs.length; i++) {
+    inputs[i].addEventListener('keyup',function(){
+        if(this.value.length>=1){
+            this.nextElementSibling.classList.add('fijar');
+        } else{
+            this.nextElementSibling.classList.remove('fijar');
         }
     })
-})
-
-var user = document.getElementById('user')
-var password = document.getElementById('password')
-var error = document.getElementById('error')
-
-
-function enviarUser(){
-    console.log('enviando formulario')
-
-    var mensajesError = []
-
-    if(user.value === null || user.value ===''){
-        mensajesError.push('ingresa tu nombre')
-    }
-
 }
+
+
+
+
